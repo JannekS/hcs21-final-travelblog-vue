@@ -1,10 +1,16 @@
 <template>
   <div class="post-prev">
     <div class="post-img">
-      <img :src="blogPost.image" alt="post image" />
+      <img
+        :src="blogPost.image"
+        alt="post image"
+        @click="handleClick(blogPost.id)"
+      />
     </div>
     <div class="prev-content">
-      <h2>{{ blogPost.title }}</h2>
+      <h2 class="post-title" @click="handleClick(blogPost.id)">
+        {{ blogPost.title }}
+      </h2>
       <p>
         <img src="/icons/map-pin.svg" alt="Location: " />
         {{ blogPost.location.city }} | {{ blogPost.location.country }}
@@ -28,6 +34,11 @@ export default {
   props: {
     blogPost: {},
   },
+  methods: {
+    handleClick: function (postId) {
+      alert(`The id of this post is ${postId}`);
+    },
+  },
 };
 </script>
 
@@ -50,6 +61,14 @@ export default {
   width: 100%;
   object-fit: cover;
   border-radius: 10px;
+}
+
+.post-img img:hover {
+  cursor: pointer;
+}
+
+.post-title:hover {
+  cursor: pointer;
 }
 
 .author-info {
