@@ -44,7 +44,7 @@ header {
 #header-wrapper {
   width: 90%;
   min-width: 600px;
-  max-height: 100px;
+  max-height: 80px;
   /* max-width: 1200px; */
   margin: 0 auto;
   /* margin-right: auto; */
@@ -61,13 +61,13 @@ header {
 #logo-title {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 10px;
 }
 
 #blog-title > h1 {
   font-family: "Lobster", cursive;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin: 0;
   color: #e45826;
 }
 
@@ -89,8 +89,8 @@ nav {
 }
 
 #logo {
-  height: 80px;
-  width: 100px;
+  height: 60px;
+  width: 80px;
 }
 
 #logo img {

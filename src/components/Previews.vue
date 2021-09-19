@@ -1,14 +1,33 @@
 <template>
-  <div id="prev-wrapper"><p>The Preview Cards will be shown here...</p></div>
+  <div id="prev-wrapper">
+    <div id="post-previews" v-for="(post, i) in blogPosts" :key="i">
+      <PostPreview :blogPost="post" />
+    </div>
+  </div>
 </template>
 
 <script>
-export default {};
+import PostPreview from "./PostPreview.vue";
+
+export default {
+  components: {
+    PostPreview,
+  },
+  props: {
+    blogPosts: Array,
+  },
+};
 </script>
 
 <style scoped>
 #prev-wrapper {
   width: 50%;
   height: 100%;
+  margin-top: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 </style>

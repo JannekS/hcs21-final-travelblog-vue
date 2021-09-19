@@ -1,9 +1,72 @@
 <template>
-  <div></div>
+  <div class="post-prev">
+    <div class="post-img">
+      <img :src="blogPost.image" alt="post image" />
+    </div>
+    <div class="prev-content">
+      <h2>{{ blogPost.title }}</h2>
+      <p>
+        <img src="/icons/map-pin.svg" alt="Location: " />
+        {{ blogPost.location.city }} | {{ blogPost.location.country }}
+      </p>
+      <p>
+        <img src="/icons/calendar.svg" alt="Date: " />
+        {{ blogPost.visitingDate.from }} to {{ blogPost.visitingDate.to }}
+      </p>
+      <div class="author-info">
+        <div class="author-img">
+          <img :src="blogPost.author.image" alt="author-img" />
+        </div>
+        <p>{{ blogPost.author.name }}</p>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    blogPost: {},
+  },
+};
 </script>
 
-<style scoped></style>
+<style scoped>
+.post-prev {
+  height: 500px;
+  width: 400px;
+  padding: 10px;
+  border-radius: 10px;
+  border: solid 1px black;
+}
+
+.post-img {
+  height: 50%;
+  width: 100%;
+}
+
+.post-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.author-info {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.author-img {
+  height: 50px;
+  width: 50px;
+}
+
+.author-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+</style>

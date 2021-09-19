@@ -1,7 +1,7 @@
 <template>
   <main>
     <div class="main-container">
-      <Previews />
+      <Previews :blogPosts="blogPostData" />
       <TravelMap />
     </div>
   </main>
@@ -19,6 +19,24 @@ export default {
     Previews,
     TravelMap,
   },
+  data: function () {
+    return {
+      blogPostData: undefined,
+    };
+  },
+  mounted: async function () {
+    const url = "http://localhost:8080/mockdata.json"; //change this later to node.js api
+    try {
+      const response = await fetch(url);
+      const result = await response.json();
+
+      this.blogPostData = result;
+      console.log(this.blogPostData);
+    } catch (error) {
+      console.log("ERROR:");
+      console.log(error);
+    }
+  },
 };
 </script>
 
@@ -27,11 +45,11 @@ export default {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap-reverse;
-  width: 90%;
+  /* width: 90%; */
   min-width: 600px;
-  min-height: 100%;
-  height: 100%;
+  height: 85vh;
+  margin: 20px;
   /* max-width: 1200px; */
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 </style>
