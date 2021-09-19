@@ -5,19 +5,27 @@
     </div>
     <div class="blog-post">
       <h1>The Shiny Cruise Ship Magnet</h1>
-      <p>
-        <img src="/icons/map-pin.svg" alt="Location: " /> Santorini | Greece
-      </p>
-      <p>
-        <img src="/icons/calendar.svg" alt="Date: " /> 2019-06-05 to 2019-06-08
-      </p>
-      <p>written by:</p>
-      <div class="author-info">
-        <div class="author-img">
-          <img src="/img/authors/jannek.jpg" alt="author-img" />
+      <div class="meta-data">
+        <div class="travel-data">
+          <p>
+            <img src="/icons/map-pin.svg" alt="Location: " /> Santorini | Greece
+          </p>
+          <p>
+            <img src="/icons/calendar.svg" alt="Date: " /> 2019-06-05 to
+            2019-06-08
+          </p>
         </div>
-        <p>Jannek</p>
+        <div>
+          <p>Author:</p>
+          <div class="author-info">
+            <div class="author-img">
+              <img src="/img/authors/jannek.jpg" alt="author-img" />
+            </div>
+            <p>Jannek</p>
+          </div>
+        </div>
       </div>
+
       <div class="post-img">
         <img src="/img/locations/santorini.jpg" alt="post image" />
       </div>
@@ -56,4 +64,52 @@
 export default {};
 </script>
 
-<style scoped></style>
+<style scoped>
+.detail-wrapper {
+  width: 80%;
+  min-width: 600px;
+  max-width: 1000px;
+  margin: 20px auto;
+}
+.go-back {
+}
+
+.meta-data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+.blog-post {
+}
+.post-img {
+  height: 50%;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.post-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.author-info {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.author-img {
+  height: 50px;
+  width: 50px;
+}
+
+.author-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+</style>

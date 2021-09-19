@@ -22,6 +22,11 @@ const routes = [
     name: "Login",
     component: () => import("../views/Login.vue"),
   },
+  {
+    path: "/post-template",
+    name: "Post",
+    component: () => import("../views/Post.vue"),
+  },
 ];
 
 const router = createRouter({
