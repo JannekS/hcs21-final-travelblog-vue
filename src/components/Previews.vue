@@ -23,7 +23,7 @@ export default {
 #prev-wrapper {
   width: 50%;
   height: 100%;
-  margin-top: 20px;
+  margin: 20px auto auto auto;
   overflow-y: auto;
   display: flex;
   flex-direction: row;
