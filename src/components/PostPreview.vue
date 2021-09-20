@@ -1,16 +1,16 @@
 <template>
   <div class="post-prev">
     <div class="post-img">
-      <img
-        :src="blogPost.image"
-        alt="Image of Destination"
-        @click="handleClick(blogPost.id)"
-      />
+      <router-link :to="detailPage"
+        ><img :src="blogPost.image" alt="Image of Destination"
+      /></router-link>
     </div>
     <div class="prev-content">
-      <h2 class="post-title" @click="handleClick(blogPost.id)">
-        {{ blogPost.title }}
-      </h2>
+      <router-link :to="detailPage"
+        ><h2 class="post-title">
+          {{ blogPost.title }}
+        </h2></router-link
+      >
       <p>
         <img src="/icons/map-pin.svg" alt="Location: " />
         {{ blogPost.location.city }} | {{ blogPost.location.country }}
@@ -34,10 +34,10 @@ export default {
   props: {
     blogPost: {},
   },
-  methods: {
-    handleClick: function (postId) {
-      alert(`The id of this post is ${postId}`);
-    },
+  data: function () {
+    return {
+      detailPage: `/post/${this.blogPost.id}`,
+    };
   },
 };
 </script>
