@@ -3,10 +3,20 @@ import App from "./App.vue";
 import router from "./router";
 import VueGoogleMaps from "@fawmi/vue-google-maps";
 
-createApp(App)
+const app = createApp(App);
+app.use(router);
+app.use(VueGoogleMaps, {
+  load: {
+    key: process.env.VUE_APP_MAPS_API_KEY,
+  },
+});
+
+app.mount("#app");
+
+/* createApp(App)
   .use(router, VueGoogleMaps, {
     load: {
-      key: process.env.MAPS_API_KEY,
+      key: process.env.VUE_APP_MAPS_API_KEY,
     },
   })
-  .mount("#app");
+  .mount("#app"); */
