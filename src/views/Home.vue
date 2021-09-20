@@ -31,7 +31,6 @@ export default {
       const result = await response.json();
 
       this.blogPostData = result;
-      console.log(this.blogPostData);
     } catch (error) {
       console.log("ERROR:");
       console.log(error);

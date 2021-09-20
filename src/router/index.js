@@ -23,7 +23,7 @@ const routes = [
     component: () => import("../views/Login.vue"),
   },
   {
-    path: "/post-template",
+    path: "/post/:id",
     name: "Post",
     component: () => import("../views/Post.vue"),
   },

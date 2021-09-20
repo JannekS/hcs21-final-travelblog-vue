@@ -3,65 +3,70 @@
     <div class="go-back">
       <router-link to="/">Back to overview</router-link>
     </div>
-    <div class="blog-post">
-      <h1>The Shiny Cruise Ship Magnet</h1>
+    <div class="blog-post" v-if="blogPost.title">
+      <h1>{{ blogPost.title }}</h1>
       <div class="meta-data">
         <div class="travel-data">
           <p>
-            <img src="/icons/map-pin.svg" alt="Location: " /> Santorini | Greece
+            <img src="/icons/map-pin.svg" alt="Location: " />
+            {{ blogPost.location.city }} | {{ blogPost.location.country }}
           </p>
           <p>
-            <img src="/icons/calendar.svg" alt="Date: " /> 2019-06-05 to
-            2019-06-08
+            <img src="/icons/calendar.svg" alt="Date: " />
+            {{ blogPost.visitingDate.from }} to
+            {{ blogPost.visitingDate.to }}
           </p>
         </div>
         <div>
           <p>Author:</p>
           <div class="author-info">
             <div class="author-img">
-              <img src="/img/authors/jannek.jpg" alt="author-img" />
+              <img :src="blogPost.author.image" alt="author-img" />
             </div>
-            <p>Jannek</p>
+            <p>{{ blogPost.author.name }}</p>
           </div>
         </div>
       </div>
 
       <div class="post-img">
-        <img src="/img/locations/santorini.jpg" alt="post image" />
+        <img :src="blogPost.image" alt="Image of Destination" />
       </div>
       <div class="main-text">
-        <p>
-          Don't forget to bring your sunglasses. Because the main town sitting
-          on top of the highest spot of the greek Island Santorini is so white
-          that you almost feel blinded by it ;-) Lorem ipsum dolor sit amet
-          consectetur, adipisicing elit. Quisquam magni, hic ducimus praesentium
-          mollitia nesciunt ea dicta cum ipsa omnis quod optio unde voluptatum
-          sed dolorum iste culpa distinctio dignissimos. Lorem ipsum dolor sit
-          amet consectetur adipisicing elit. Temporibus tempora dolor suscipit.
-          Dolores consectetur et sequi tempora? Obcaecati laudantium eos ipsa
-          modi iusto dolor! Quibusdam praesentium nulla atque id fugit. Lorem
-          ipsum dolor, sit amet consectetur adipisicing elit. Saepe cum ea at
-          rem vero, quae similique repudiandae nobis perferendis itaque alias
-          voluptate beatae harum ipsum quisquam pariatur maiores laudantium
-          non.Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
-          adipisci sapiente asperiores numquam, in sit consequatur reiciendis
-          illo harum, ipsum veritatis molestiae, sequi corporis quo. Itaque
-          temporibus similique nam tempore! Lorem ipsum dolor sit amet
-          consectetur, adipisicing elit. Reprehenderit molestias dolores
-          doloremque modi sed dolorem assumenda facere culpa officia, doloribus
-          quam accusantium quidem eum, veritatis animi aliquam. Magnam, atque?
-          Culpa! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla
-          voluptas ullam, beatae labore facilis at quidem, accusamus consectetur
-          eligendi blanditiis voluptatibus autem vitae unde expedita possimus
-          earum qui quas? Officiis?
-        </p>
+        {{ blogPost.text }}
       </div>
     </div>
+    <!-- <div v-else>
+      <p>404</p>
+      <p>The page you aree looking for does not exist :-(</p>
+    </div> -->
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data: function () {
+    return {
+      blogPost: {},
+      // blogPostData: undefined,
+    };
+  },
+  methods: {},
+  mounted: async function () {
+    const url = "http://localhost:8080/mockdata.json"; //change this later to node.js api
+    const context = this;
+    try {
+      const response = await fetch(url);
+      const result = await response.json();
+
+      context.blogPost = result.find(function (post) {
+        return post.id === Number(context.$route.params.id);
+      });
+    } catch (error) {
+      console.log("ERROR:");
+      console.log(error);
+    }
+  },
+};
 </script>
 
 <style scoped>
@@ -111,5 +116,9 @@ export default {};
   width: 100%;
   object-fit: cover;
   border-radius: 50%;
+}
+
+.main-text {
+  white-space: pre-line;
 }
 </style>

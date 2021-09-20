@@ -3,7 +3,7 @@
     <div class="post-img">
       <img
         :src="blogPost.image"
-        alt="post image"
+        alt="Image of Destination"
         @click="handleClick(blogPost.id)"
       />
     </div>
