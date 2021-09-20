@@ -12,11 +12,3 @@ app.use(VueGoogleMaps, {
 });
 
 app.mount("#app");
-
-/* createApp(App)
-  .use(router, VueGoogleMaps, {
-    load: {
-      key: process.env.VUE_APP_MAPS_API_KEY,
-    },
-  })
-  .mount("#app"); */
