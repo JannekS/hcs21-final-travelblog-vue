@@ -35,10 +35,6 @@
         {{ blogPost.text }}
       </div>
     </div>
-    <!-- <div v-else>
-      <p>404</p>
-      <p>The page you aree looking for does not exist :-(</p>
-    </div> -->
   </div>
 </template>
 
@@ -47,7 +43,6 @@ export default {
   data: function () {
     return {
       blogPost: {},
-      // blogPostData: undefined,
     };
   },
   methods: {},

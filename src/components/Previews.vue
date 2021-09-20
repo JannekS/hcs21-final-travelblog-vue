@@ -16,13 +16,6 @@ export default {
   props: {
     blogPosts: Array,
   },
-  /* computed: {
-    sortedPosts() {
-      return this.blogPosts.sort(function(post1, post2) {
-        return post1.visitingDate.from > post2.visitingDate.from;
-      });
-    }, 
-  }, */
 };
 </script>
 
