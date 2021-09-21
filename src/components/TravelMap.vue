@@ -75,5 +75,6 @@ export default {
   width: 50%;
   height: 100%;
   border-radius: 10px;
+  overflow: hidden;
 }
 </style>
