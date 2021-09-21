@@ -2,18 +2,25 @@
   <div id="map-wrapper">
     <GMapMap
       :center="center"
-      :zoom="3"
+      :zoom="4"
       map-type-id="terrain"
       style="width: 100%; height: 100%"
     >
-      <GMapCluster>
-        <GMapMarker
-          :key="index"
-          v-for="(post, index) in blogPosts"
-          :position="post.location.geo"
-          :clickable="true"
-        />
-      </GMapCluster>
+      <GMapMarker
+        :key="index"
+        v-for="(post, index) in blogPosts"
+        :position="post.location.geo"
+        :clickable="true"
+        @click="openInfoWindow(post.id)"
+      >
+        <GMapInfoWindow
+          :closeclick="true"
+          @closeclick="openInfoWindow(null)"
+          :opened="openedPostId === post.id"
+        >
+          <div>I am in info window</div>
+        </GMapInfoWindow>
+      </GMapMarker>
     </GMapMap>
   </div>
 </template>
@@ -31,19 +38,17 @@ export default {
   data() {
     return {
       center: this.blogPosts[0].location.geo,
-      markers: [
-        {
-          position: {
-            lat: 51.093048,
-            lng: 6.84212,
-          },
-        }, // Along list of clusters
-      ],
+      openedPostId: null,
     };
   },
   mounted: function () {
     console.log(this.center);
     console.log(this.blogPosts);
+  },
+  methods: {
+    openInfoWindow(id) {
+      this.openedPostId = id;
+    },
   },
 };
 </script>
@@ -52,5 +57,6 @@ export default {
 #map-wrapper {
   width: 50%;
   height: 100%;
+  border-radius: 10px;
 }
 </style>
