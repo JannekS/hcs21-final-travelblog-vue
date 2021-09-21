@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div class="info-window">
     <h3>{{ blogPost.title }}</h3>
     <p>
       <img src="/icons/calendar.svg" alt="Date: " />
       {{ blogPost.visitingDate.from }} to {{ blogPost.visitingDate.to }}
     </p>
-    <div id="read-more">
+    <div class="read-more">
       <div class="author-info">
         <div class="author-img">
           <img :src="blogPost.author.image" alt="author-img" />
@@ -31,7 +31,11 @@ export default {
 </script>
 
 <style scoped>
-#read-more {
+.info-window {
+  width: 200px;
+  padding: 0 10px;
+}
+.read-more {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
