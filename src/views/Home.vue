@@ -1,8 +1,9 @@
 <template>
   <main>
-    <div class="main-container">
+    <div class="main-container" v-if="blogPostData">
+      <!-- Is this not too hacky? -->
       <Previews :blogPosts="blogPostData" />
-      <TravelMap />
+      <TravelMap :blogPosts="blogPostData" />
     </div>
   </main>
 </template>
@@ -22,6 +23,7 @@ export default {
   data: function () {
     return {
       blogPostData: undefined,
+      testData: "This is a Test",
     };
   },
   mounted: async function () {

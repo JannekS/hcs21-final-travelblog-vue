@@ -1,25 +1,17 @@
 <template>
   <div id="map-wrapper">
-    <!-- <GMapMap
-      :center="{ lat: 51.093048, lng: 6.84212 }"
-      :zoom="7"
-      map-type-id="terrain"
-      style="width: 100vw; height: 85vh"
-    >
-    </GMapMap> -->
     <GMapMap
       :center="center"
-      :zoom="5"
+      :zoom="3"
       map-type-id="terrain"
-      style="width: 1005; height: 100%"
+      style="width: 100%; height: 100%"
     >
       <GMapCluster>
         <GMapMarker
           :key="index"
-          v-for="(m, index) in markers"
-          :position="m.position"
+          v-for="(post, index) in blogPosts"
+          :position="post.location.geo"
           :clickable="true"
-          @click="center = m.position"
         />
       </GMapCluster>
     </GMapMap>
@@ -28,9 +20,17 @@
 
 <script>
 export default {
+  props: {
+    blogPosts: {
+      type: Array,
+      default() {
+        return [];
+      },
+    },
+  },
   data() {
     return {
-      center: { lat: 51.093048, lng: 6.84212 },
+      center: this.blogPosts[0].location.geo,
       markers: [
         {
           position: {
@@ -40,6 +40,10 @@ export default {
         }, // Along list of clusters
       ],
     };
+  },
+  mounted: function () {
+    console.log(this.center);
+    console.log(this.blogPosts);
   },
 };
 </script>
