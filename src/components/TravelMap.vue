@@ -18,7 +18,7 @@
           @closeclick="openInfoWindow(null)"
           :opened="openedPostId === post.id"
         >
-          <div>I am in info window</div>
+          <div><PostInfoWindow :blogPost="post" /></div>
         </GMapInfoWindow>
       </GMapMarker>
     </GMapMap>
@@ -26,7 +26,12 @@
 </template>
 
 <script>
+import PostInfoWindow from "@/components/PostInfoWindow.vue";
+
 export default {
+  components: {
+    PostInfoWindow,
+  },
   props: {
     blogPosts: {
       type: Array,
