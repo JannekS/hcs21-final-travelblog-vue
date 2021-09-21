@@ -3,6 +3,18 @@
     <GMapMap
       :center="center"
       :zoom="4"
+      :options="{
+        minZoom: 2,
+        restriction: {
+          latLngBounds: {
+            north: 85,
+            south: -85,
+            east: 179.99,
+            west: -179.99,
+          },
+          strictBounds: true,
+        },
+      }"
       map-type-id="terrain"
       style="width: 100%; height: 100%"
     >
