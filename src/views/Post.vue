@@ -35,6 +35,30 @@
         {{ blogPost.text }}
       </div>
     </div>
+    <div class="map-wrapper" v-if="blogPost.location">
+      <GMapMap
+        :center="blogPost.location.geo"
+        :zoom="10"
+        :options="{
+          minZoom: 4,
+          restriction: {
+            latLngBounds: {
+              north: 85,
+              south: -85,
+              east: 179.99,
+              west: -179.99,
+            },
+            strictBounds: true,
+          },
+          draggable: false,
+          fullscreenControl: false,
+        }"
+        map-type-id="terrain"
+        style="width: 100%; height: 100%"
+      >
+        <GMapMarker :position="blogPost.location.geo" />
+      </GMapMap>
+    </div>
   </div>
 </template>
 
@@ -115,5 +139,13 @@ export default {
 
 .main-text {
   white-space: pre-line;
+}
+
+.map-wrapper {
+  width: 100%;
+  height: 400px;
+  margin: 20px 0px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 </style>
