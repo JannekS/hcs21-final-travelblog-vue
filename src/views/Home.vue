@@ -23,7 +23,6 @@ export default {
   data: function () {
     return {
       blogPostData: undefined,
-      testData: "This is a Test",
     };
   },
   mounted: async function () {
