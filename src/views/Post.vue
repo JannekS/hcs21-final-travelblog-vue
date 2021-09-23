@@ -74,7 +74,7 @@ export default {
   },
   methods: {},
   mounted: async function () {
-    const url = "http://localhost:8080/mockdata.json"; //change this later to node.js api
+    const url = "http://localhost:3000/mockdata.json"; //change this later to node.js api
     const context = this;
     try {
       const response = await fetch(url);
