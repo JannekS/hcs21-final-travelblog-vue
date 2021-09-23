@@ -5,6 +5,9 @@
       <Previews :blogPosts="blogPostData" />
       <TravelMap :blogPosts="blogPostData" />
     </div>
+    <div class="main-container" v-else>
+      <div class="loader"></div>
+    </div>
   </main>
 </template>
 
@@ -53,5 +56,24 @@ export default {
   margin: 20px;
   /* max-width: 1200px; */
   /* margin: 0 auto; */
+}
+
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  margin: 30vh auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 </style>
