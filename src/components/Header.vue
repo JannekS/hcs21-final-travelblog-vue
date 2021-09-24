@@ -3,7 +3,7 @@
     <div id="header-wrapper">
       <div id="logo-title">
         <div id="logo">
-          <img src="/img/logo/logo2.jpg" alt="LOGO" />
+          <img src="/icons/compass.svg" alt="LOGO" />
         </div>
         <div id="blog-title">
           <h1 class="text-4xl">My Travel Blog</h1>
@@ -89,14 +89,15 @@ nav {
 }
 
 #logo {
-  height: 60px;
-  width: 80px;
+  height: 40px;
+  width: 40px;
 }
 
 #logo img {
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  /* object-fit: cover; */
   border-radius: 10px;
+  color: #e45826;
 }
 </style>
