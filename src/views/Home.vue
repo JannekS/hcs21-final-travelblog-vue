@@ -1,7 +1,6 @@
 <template>
   <main>
     <div class="main-container" v-if="blogPostData">
-      <!-- Is this not too hacky? -->
       <Previews :blogPosts="blogPostData" />
       <TravelMap :blogPosts="blogPostData" />
     </div>
@@ -29,13 +28,13 @@ export default {
     };
   },
   mounted: async function () {
-    const url = "http://localhost:3000/mockdata.json"; //change this later to node.js api
+    const url = "http://localhost:3000/posts"; //change this later to node.js api
     try {
       const response = await fetch(url);
       const result = await response.json();
 
       this.blogPostData = result.sort(function (post1, post2) {
-        return post1.visitingDate.from < post2.visitingDate.from;
+        return post1.date_from < post2.date_from;
       });
     } catch (error) {
       console.log("ERROR:");

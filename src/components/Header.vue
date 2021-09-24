@@ -6,7 +6,7 @@
           <img src="/img/logo/logo2.jpg" alt="LOGO" />
         </div>
         <div id="blog-title">
-          <h1>My Travel Blog</h1>
+          <h1 class="text-4xl">My Travel Blog</h1>
         </div>
       </div>
       <nav>

@@ -3,14 +3,14 @@
     <h3>{{ blogPost.title }}</h3>
     <p>
       <img src="/icons/calendar.svg" alt="Date: " />
-      {{ blogPost.visitingDate.from }} to {{ blogPost.visitingDate.to }}
+      {{ blogPost.trip_duration }}
     </p>
     <div class="read-more">
       <div class="author-info">
         <div class="author-img">
-          <img :src="blogPost.author.image" alt="author-img" />
+          <img :src="blogPost.author_image" alt="author-img" />
         </div>
-        <p>{{ blogPost.author.name }}</p>
+        <p>{{ blogPost.author_name }}</p>
       </div>
       <router-link :to="detailPage">Read post</router-link>
     </div>

@@ -21,7 +21,7 @@
       <GMapMarker
         :key="index"
         v-for="(post, index) in blogPosts"
-        :position="post.location.geo"
+        :position="{ lat: post.lat, lng: post.lng }"
         :clickable="true"
         @click="openInfoWindow(post.id)"
       >
@@ -54,7 +54,10 @@ export default {
   },
   data() {
     return {
-      center: this.blogPosts[0].location.geo,
+      center: {
+        lat: this.blogPosts[0].lat,
+        lng: this.blogPosts[0].lng,
+      },
       openedPostId: null,
     };
   },

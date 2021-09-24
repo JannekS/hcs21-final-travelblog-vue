@@ -13,17 +13,17 @@
       >
       <p>
         <img src="/icons/map-pin.svg" alt="Location: " />
-        {{ blogPost.location.city }} | {{ blogPost.location.country }}
+        {{ blogPost.city }} | {{ blogPost.country }}
       </p>
       <p>
         <img src="/icons/calendar.svg" alt="Date: " />
-        {{ blogPost.visitingDate.from }} to {{ blogPost.visitingDate.to }}
+        {{ blogPost.trip_duration }}
       </p>
       <div class="author-info">
         <div class="author-img">
-          <img :src="blogPost.author.image" alt="author-img" />
+          <img :src="blogPost.author_image" alt="author-img" />
         </div>
-        <p>{{ blogPost.author.name }}</p>
+        <p>{{ blogPost.author_name }}</p>
       </div>
     </div>
   </div>
