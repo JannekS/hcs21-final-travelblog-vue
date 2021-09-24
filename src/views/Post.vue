@@ -9,21 +9,20 @@
         <div class="travel-data">
           <p>
             <img src="/icons/map-pin.svg" alt="Location: " />
-            {{ blogPost.location.city }} | {{ blogPost.location.country }}
+            {{ blogPost.city }} | {{ blogPost.country }}
           </p>
           <p>
             <img src="/icons/calendar.svg" alt="Date: " />
-            {{ blogPost.visitingDate.from }} to
-            {{ blogPost.visitingDate.to }}
+            {{ blogPost.trip_duration }}
           </p>
         </div>
         <div>
           <p>Author:</p>
           <div class="author-info">
             <div class="author-img">
-              <img :src="blogPost.author.image" alt="author-img" />
+              <img :src="blogPost.author_image" alt="author-img" />
             </div>
-            <p>{{ blogPost.author.name }}</p>
+            <p>{{ blogPost.author_name }}</p>
           </div>
         </div>
       </div>
@@ -35,9 +34,9 @@
         {{ blogPost.text }}
       </div>
     </div>
-    <div class="map-wrapper" v-if="blogPost.location">
+    <div class="map-wrapper" v-if="blogPost.lat">
       <GMapMap
-        :center="blogPost.location.geo"
+        :center="geo"
         :zoom="10"
         :options="{
           minZoom: 4,
@@ -56,7 +55,7 @@
         map-type-id="terrain"
         style="width: 100%; height: 100%"
       >
-        <GMapMarker :position="blogPost.location.geo" />
+        <GMapMarker :position="geo" />
       </GMapMap>
     </div>
     <div v-else>
@@ -70,19 +69,20 @@ export default {
   data: function () {
     return {
       blogPost: {},
+      geo: {},
     };
   },
   methods: {},
   mounted: async function () {
-    const url = "http://localhost:3000/mockdata.json"; //change this later to node.js api
+    const postId = Number(this.$route.params.id);
+    const url = `http://localhost:3000/post/${postId}`; //change this later to node.js api
     const context = this;
     try {
       const response = await fetch(url);
       const result = await response.json();
 
-      context.blogPost = result.find(function (post) {
-        return post.id === Number(context.$route.params.id);
-      });
+      context.blogPost = result;
+      context.geo = { lat: result.lat, lng: result.lng };
     } catch (error) {
       console.log("ERROR:");
       console.log(error);
