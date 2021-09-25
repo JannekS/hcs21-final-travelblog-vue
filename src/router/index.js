@@ -27,11 +27,21 @@ const routes = [
     name: "Post",
     component: () => import("../views/Post.vue"),
   },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "NotFound",
+    component: () => import("../views/NotFound.vue"),
+  },
 ];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
+});
+
+router.afterEach(function (to) {
+  // make 4040 work for post ids as well
+  console.log(to.params);
 });
 
 export default router;

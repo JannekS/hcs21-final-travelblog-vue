@@ -3,7 +3,7 @@
     <div class="go-back">
       <router-link to="/">Back to overview</router-link>
     </div>
-    <div class="blog-post" v-if="blogPost.title">
+    <div class="blog-post" v-if="pageLoaded">
       <h1>{{ blogPost.title }}</h1>
       <div class="meta-data">
         <div class="travel-data">
@@ -34,7 +34,7 @@
         {{ blogPost.text }}
       </div>
     </div>
-    <div class="map-wrapper" v-if="blogPost.lat">
+    <div class="map-wrapper" v-if="pageLoaded">
       <GMapMap
         :center="geo"
         :zoom="10"
@@ -70,6 +70,7 @@ export default {
     return {
       blogPost: {},
       geo: {},
+      pageLoaded: false,
     };
   },
   methods: {},
@@ -83,6 +84,7 @@ export default {
 
       context.blogPost = result;
       context.geo = { lat: result.lat, lng: result.lng };
+      context.pageLoaded = true;
     } catch (error) {
       console.log("ERROR:");
       console.log(error);

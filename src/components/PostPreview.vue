@@ -37,6 +37,7 @@ export default {
   data: function () {
     return {
       detailPage: `/post/${this.blogPost.id}`,
+      postImgSrc: `${process.env.VUE_APP_SERVER_URL}${this.blogPost.image}`,
     };
   },
 };

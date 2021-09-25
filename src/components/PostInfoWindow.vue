@@ -25,6 +25,7 @@ export default {
   data: function () {
     return {
       detailPage: `/post/${this.blogPost.id}`,
+      serverURL: process.env.VUE_MAPS_SERVER_URL,
     };
   },
 };
