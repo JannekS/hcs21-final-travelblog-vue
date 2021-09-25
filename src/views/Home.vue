@@ -36,7 +36,7 @@ export default {
       this.blogPostData = result.sort(function (post1, post2) {
         return post1.date_from < post2.date_from;
       });
-      console.log(process.env.VUE_APP_TEST),
+      console.log(process.env.VUE_APP_TEST);
     } catch (error) {
       console.log("ERROR:");
       console.log(error);
