@@ -8,7 +8,7 @@
     <div class="read-more">
       <div class="author-info">
         <div class="author-img">
-          <img :src="serverURL + blogPost.author_image" alt="author image" />
+          <img :src="blogPost.author_image" alt="author image" />
         </div>
         <p>{{ blogPost.author_name }}</p>
       </div>
@@ -25,7 +25,6 @@ export default {
   data: function () {
     return {
       detailPage: `/post/${this.blogPost.id}`,
-      serverURL: process.env.VUE_MAPS_SERVER_URL,
     };
   },
 };
