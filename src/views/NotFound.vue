@@ -1,12 +1,16 @@
 <template>
   <div>
-    <p>404</p>
-    <p>The page you are looking for does not exist...</p>
+    <FourOFour />
   </div>
 </template>
 
 <script>
-export default {};
+import FourOFour from "@/components/FourOFour.vue";
+export default {
+  components: {
+    FourOFour,
+  },
+};
 </script>
 
 <style scoped></style>
