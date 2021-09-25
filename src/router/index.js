@@ -39,9 +39,4 @@ const router = createRouter({
   routes,
 });
 
-router.afterEach(function (to) {
-  // make 404 work for post ids as well
-  console.log(to.params);
-});
-
 export default router;
