@@ -27,7 +27,7 @@ export default {
     };
   },
   mounted: async function () {
-    const url = `${this.serverURL}posts`;
+    const url = `${this.serverURL}/posts`;
     try {
       const response = await fetch(url);
       const result = await response.json();

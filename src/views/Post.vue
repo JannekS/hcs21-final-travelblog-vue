@@ -77,7 +77,7 @@ export default {
   methods: {},
   mounted: async function () {
     const postId = Number(this.$route.params.id);
-    const url = `${this.serverURL}post/${postId}`;
+    const url = `${this.serverURL}/post/${postId}`;
     const context = this;
     try {
       const response = await fetch(url);
