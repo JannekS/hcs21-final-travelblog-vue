@@ -143,9 +143,9 @@ export default {
   border-radius: 50%;
 }
 
-.main-text {
+/* .main-text {
   white-space: pre-line;
-}
+} */
 
 .map-wrapper {
   width: 100%;
