@@ -61,10 +61,6 @@ export default {
       openedPostId: null,
     };
   },
-  mounted: function () {
-    console.log(this.center);
-    console.log(this.blogPosts);
-  },
   methods: {
     openInfoWindow(id) {
       this.openedPostId = id;

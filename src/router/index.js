@@ -40,7 +40,7 @@ const router = createRouter({
 });
 
 router.afterEach(function (to) {
-  // make 4040 work for post ids as well
+  // make 404 work for post ids as well
   console.log(to.params);
 });
 

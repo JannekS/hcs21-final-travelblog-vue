@@ -71,12 +71,13 @@ export default {
       blogPost: {},
       geo: {},
       pageLoaded: false,
+      serverURL: process.env.VUE_APP_SERVER_URL,
     };
   },
   methods: {},
   mounted: async function () {
     const postId = Number(this.$route.params.id);
-    const url = `http://localhost:3000/post/${postId}`; //change this later to node.js api
+    const url = `${this.serverURL}post/${postId}`;
     const context = this;
     try {
       const response = await fetch(url);

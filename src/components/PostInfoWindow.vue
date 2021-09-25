@@ -8,7 +8,7 @@
     <div class="read-more">
       <div class="author-info">
         <div class="author-img">
-          <img :src="blogPost.author_image" alt="author-img" />
+          <img :src="serverURL + blogPost.author_image" alt="author image" />
         </div>
         <p>{{ blogPost.author_name }}</p>
       </div>

@@ -11,8 +11,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
-
 import Previews from "@/components/Previews.vue";
 import TravelMap from "@/components/TravelMap.vue";
 
@@ -25,10 +23,11 @@ export default {
   data: function () {
     return {
       blogPostData: undefined,
+      serverURL: process.env.VUE_APP_SERVER_URL,
     };
   },
   mounted: async function () {
-    const url = "http://localhost:3000/posts"; //change this later to node.js api
+    const url = `${this.serverURL}posts`;
     try {
       const response = await fetch(url);
       const result = await response.json();
