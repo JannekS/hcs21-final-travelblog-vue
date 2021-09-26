@@ -35,20 +35,7 @@
       <GMapMap
         :center="geo"
         :zoom="10"
-        :options="{
-          minZoom: 4,
-          restriction: {
-            latLngBounds: {
-              north: 85,
-              south: -85,
-              east: 179.99,
-              west: -179.99,
-            },
-            strictBounds: true,
-          },
-          draggable: false,
-          fullscreenControl: false,
-        }"
+        :options="options"
         map-type-id="terrain"
         style="width: 100%; height: 100%"
       >
@@ -63,6 +50,44 @@ export default {
   props: {
     blogPost: {},
     geo: {},
+  },
+  data() {
+    return {
+      options: {
+        minZoom: 4,
+        restriction: {
+          latLngBounds: {
+            north: 85,
+            south: -85,
+            east: 179.99,
+            west: -179.99,
+          },
+          strictBounds: true,
+        },
+        draggable: false,
+        fullscreenControl: false,
+        styles: [
+          {
+            featureType: "water",
+            elementType: "geometry.fill",
+            stylers: [
+              {
+                color: "#cde8eb" /* "#b8dadd" */,
+              },
+            ],
+          },
+          {
+            featureType: "water",
+            elementType: "labels.text.fill",
+            stylers: [
+              {
+                color: "#92998d",
+              },
+            ],
+          },
+        ],
+      },
+    };
   },
 };
 </script>
