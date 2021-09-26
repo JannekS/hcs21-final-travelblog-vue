@@ -1,10 +1,14 @@
 <template>
   <div class="info-window">
     <h3>{{ blogPost.title }}</h3>
-    <p>
-      <img src="/icons/calendar.svg" alt="Date: " />
-      {{ blogPost.trip_duration }}
-    </p>
+    <div>
+      <div class="date">
+        <img src="/icons/calendar.svg" alt="Date: " />
+        <p>
+          {{ blogPost.trip_duration }}
+        </p>
+      </div>
+    </div>
     <div class="read-more">
       <div class="author-info">
         <div class="author-img">
@@ -12,7 +16,10 @@
         </div>
         <p>{{ blogPost.author_name }}</p>
       </div>
-      <router-link :to="detailPage">Read post</router-link>
+      <router-link :to="detailPage">
+        <img id="link-arrow" src="/icons/arrow-right.svg" /> Read
+        post</router-link
+      >
     </div>
   </div>
 </template>
@@ -31,6 +38,11 @@ export default {
 </script>
 
 <style scoped>
+a {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 .info-window {
   width: 200px;
   padding: 0 10px;
@@ -58,5 +70,28 @@ export default {
   width: 100%;
   object-fit: cover;
   border-radius: 50%;
+}
+
+.date {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0;
+}
+
+.date p {
+  vertical-align: middle;
+  margin: 0 10px;
+  padding: 0;
+}
+
+.date img {
+  vertical-align: middle;
+  height: 25px;
+}
+
+#link-arrow {
+  height: 1rem;
+  margin: 0;
+  vertical-align: middle;
 }
 </style>
