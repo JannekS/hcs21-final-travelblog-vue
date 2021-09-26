@@ -36,7 +36,7 @@ export default {
 @media only screen and (min-width: 800px) {
   #prev-wrapper {
     width: 49%;
-    margin: auto;
+    margin-left: 0;
     padding-bottom: 20px;
     overflow-y: auto;
     display: flex;

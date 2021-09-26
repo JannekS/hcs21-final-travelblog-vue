@@ -104,6 +104,12 @@ body::after {
     justify-content: space-between;
   }
 
+  @media only screen and (min-width: 2800px) {
+    .main-container {
+      margin: auto;
+    }
+  }
+
   #map-wrapper {
     display: flex;
     width: 49%;

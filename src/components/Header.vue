@@ -88,14 +88,10 @@ header {
 }
 
 nav {
-  /* width: 30px; */
-  /* min-width: 50%; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-left: 20px;
-  margin-right: 20px;
 }
 
 .nav-item {
