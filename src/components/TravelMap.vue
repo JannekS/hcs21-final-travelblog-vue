@@ -3,18 +3,7 @@
     <GMapMap
       :center="center"
       :zoom="4"
-      :options="{
-        minZoom: 2,
-        restriction: {
-          latLngBounds: {
-            north: 85,
-            south: -85,
-            east: 179.99,
-            west: -179.99,
-          },
-          strictBounds: true,
-        },
-      }"
+      :options="options"
       map-type-id="terrain"
       style="width: 100%; height: 100%"
     >
@@ -59,6 +48,38 @@ export default {
         lng: this.blogPosts[0].lng,
       },
       openedPostId: null,
+      options: {
+        minZoom: 2,
+        restriction: {
+          latLngBounds: {
+            north: 85,
+            south: -85,
+            east: 179.99,
+            west: -179.99,
+          },
+          strictBounds: true,
+        },
+        styles: [
+          {
+            featureType: "water",
+            elementType: "geometry.fill",
+            stylers: [
+              {
+                color: "#cde8eb" /* "#b8dadd" */,
+              },
+            ],
+          },
+          {
+            featureType: "water",
+            elementType: "labels.text.fill",
+            stylers: [
+              {
+                color: "#92998d",
+              },
+            ],
+          },
+        ],
+      },
     };
   },
   methods: {

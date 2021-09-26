@@ -48,7 +48,9 @@ export default {
   width: 400px;
   padding: 10px;
   border-radius: 10px;
-  border: solid 1px black;
+  background-color: white;
+  /* border: solid 1px black; */
+  box-shadow: 10px 5px 5px rgb(98, 98, 98);
 }
 
 .post-img {

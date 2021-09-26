@@ -73,6 +73,9 @@ export default {
   min-width: 600px;
   max-width: 1000px;
   margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white;
 }
 
 .meta-data {
