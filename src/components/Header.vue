@@ -11,16 +11,24 @@
       </div>
       <nav>
         <div class="nav-item">
-          <router-link to="/">Home</router-link>
+          <router-link to="/"
+            ><img src="/icons/home.svg" /><span> Home</span>
+          </router-link>
         </div>
         <div class="nav-item">
-          <router-link to="/contact">Contact</router-link>
+          <router-link to="/contact"
+            ><img src="/icons/at-sign.svg" /><span> Contact</span></router-link
+          >
         </div>
         <div class="nav-item">
-          <router-link to="/new-post">New Post</router-link>
+          <router-link to="/new-post">
+            <img src="/icons/edit.svg" /><span> New Post</span></router-link
+          >
         </div>
         <div class="nav-item">
-          <router-link to="/login">Log In</router-link>
+          <router-link to="/login"
+            ><img src="/icons/log-in.svg" /><span> Log In</span></router-link
+          >
         </div>
       </nav>
     </div>
@@ -33,19 +41,19 @@ export default {};
 
 <style scoped>
 header {
-  /* position: fixed;
+  /*   position: fixed;
   top: 0;
   margin: 0; */
   width: 100%;
   background-color: #e6d5b8;
-  /* z-index: 10000; */
+  /*   z-index: 10000; */
 }
 
 #header-wrapper {
-  width: 90%;
-  min-width: 600px;
+  /* width: 90%; */
+  /*   min-width: 600px; */
   max-height: 80px;
-  /* max-width: 1200px; */
+  max-width: 2800px;
   margin: 0 auto;
   /* margin-right: auto; */
   display: flex;
@@ -85,7 +93,27 @@ nav {
 .nav-item {
   height: 50%;
   /* vertical-align: middle; */
-  margin-left: 10px;
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-item img {
+  height: 20px;
+  vertical-align: middle;
+  color: #4a3933;
+  /* margin-right: 5px; */
+}
+
+.nav-item span {
+  display: none;
+}
+
+@media only screen and (min-width: 800px) {
+  .nav-item span {
+    vertical-align: middle;
+    display: inline;
+  }
 }
 
 #logo {

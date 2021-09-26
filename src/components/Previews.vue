@@ -21,13 +21,31 @@ export default {
 
 <style scoped>
 #prev-wrapper {
-  width: 50%;
-  height: 100%;
-  margin: 20px auto auto auto;
+  width: 100%;
+  min-width: auto;
+  height: 85vh;
+  margin: 0;
+  padding-bottom: 20px;
   overflow-y: auto;
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
   flex-wrap: wrap;
   gap: 20px;
+}
+
+@media only screen and (min-width: 800px) {
+  #prev-wrapper {
+    width: 49%;
+    min-width: 450px;
+    /* margin: auto; */
+    padding-bottom: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
 }
 </style>

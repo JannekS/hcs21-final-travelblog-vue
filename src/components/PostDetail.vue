@@ -1,46 +1,48 @@
 <template>
-  <div class="detail-wrapper">
-    <div class="blog-post">
-      <h1>{{ blogPost.title }}</h1>
-      <div class="meta-data">
-        <div class="travel-data">
-          <p>
-            <img src="/icons/map-pin.svg" alt="Location: " />
-            {{ blogPost.city }} | {{ blogPost.country }}
-          </p>
-          <p>
-            <img src="/icons/calendar.svg" alt="Date: " />
-            {{ blogPost.trip_duration }}
-          </p>
-        </div>
-        <div>
-          <p>Author:</p>
-          <div class="author-info">
-            <div class="author-img">
-              <img :src="blogPost.author_image" alt="author-img" />
+  <div class="scroll-wrapper">
+    <div class="detail-wrapper">
+      <div class="blog-post">
+        <h1>{{ blogPost.title }}</h1>
+        <div class="meta-data">
+          <div class="travel-data">
+            <p>
+              <img src="/icons/map-pin.svg" alt="Location: " />
+              {{ blogPost.city }} | {{ blogPost.country }}
+            </p>
+            <p>
+              <img src="/icons/calendar.svg" alt="Date: " />
+              {{ blogPost.trip_duration }}
+            </p>
+          </div>
+          <div>
+            <p>Author:</p>
+            <div class="author-info">
+              <div class="author-img">
+                <img :src="blogPost.author_image" alt="author-img" />
+              </div>
+              <p>{{ blogPost.author_name }}</p>
             </div>
-            <p>{{ blogPost.author_name }}</p>
           </div>
         </div>
-      </div>
 
-      <div class="post-img">
-        <img :src="blogPost.image" alt="Image of Destination" />
+        <div class="post-img">
+          <img :src="blogPost.image" alt="Image of Destination" />
+        </div>
+        <div class="main-text">
+          {{ blogPost.text }}
+        </div>
       </div>
-      <div class="main-text">
-        {{ blogPost.text }}
+      <div class="map-wrapper">
+        <GMapMap
+          :center="geo"
+          :zoom="10"
+          :options="options"
+          map-type-id="terrain"
+          style="width: 100%; height: 100%"
+        >
+          <GMapMarker :position="geo" />
+        </GMapMap>
       </div>
-    </div>
-    <div class="map-wrapper">
-      <GMapMap
-        :center="geo"
-        :zoom="10"
-        :options="options"
-        map-type-id="terrain"
-        style="width: 100%; height: 100%"
-      >
-        <GMapMarker :position="geo" />
-      </GMapMap>
     </div>
   </div>
 </template>
@@ -93,14 +95,26 @@ export default {
 </script>
 
 <style scoped>
+.scroll-wrapper {
+  width: 100%;
+  height: 85vh;
+  overflow-y: auto;
+}
 .detail-wrapper {
-  width: 80%;
-  min-width: 600px;
+  min-width: 400px;
   max-width: 1000px;
-  margin: 20px auto;
+  margin: 0 10px;
   padding: 20px;
   border-radius: 10px;
   background-color: white;
+}
+
+@media only screen and (min-width: 1150px) {
+  .detail-wrapper {
+    padding-left: 40px;
+    padding-right: 40px;
+    margin: auto;
+  }
 }
 
 .meta-data {
@@ -112,10 +126,19 @@ export default {
 }
 .blog-post {
 }
+
 .post-img {
-  height: 50%;
+  height: 250px;
   width: 100%;
   margin: 20px 0;
+}
+
+@media only screen and (min-width: 600px) {
+  .post-img {
+    height: 400px;
+    width: 100%;
+    margin: 20px 0;
+  }
 }
 
 .post-img img {

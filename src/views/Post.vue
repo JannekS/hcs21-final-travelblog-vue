@@ -57,6 +57,11 @@ export default {
 
 <style scoped>
 .go-back {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #e6d5b8;
+  margin: 10px;
+  float: left;
 }
 
 .loader {

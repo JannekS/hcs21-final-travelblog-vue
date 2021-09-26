@@ -2,7 +2,9 @@
   <main>
     <div class="main-container" v-if="blogPostData">
       <Previews :blogPosts="blogPostData" />
-      <TravelMap :blogPosts="blogPostData" />
+      <div id="map-wrapper">
+        <TravelMap :blogPosts="blogPostData" />
+      </div>
     </div>
     <div class="main-container" v-else>
       <div class="loader"></div>
@@ -45,7 +47,7 @@ export default {
 
 <style lang="scss">
 body {
-  background-image: url(https://images.pexels.com/photos/4172291/pexels-photo-4172291.jpeg?cs=srgb&dl=pexels-wallace-chuck-4172291.jpg&fm=jpg);
+  background-image: url(/img/bg-image.jpg);
   background-repeat: repeat-y;
   background-attachment: fixed;
   background-size: cover;
@@ -81,15 +83,31 @@ body::after {
 }
 
 .main-container {
+  min-width: 450px;
+  margin-top: 10px;
+  height: 85vh;
+  padding: 20px;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap-reverse;
-  /* width: 90%; */
-  min-width: 600px;
-  height: 85vh;
-  margin: 20px;
-  /* max-width: 1200px; */
-  /* margin: 0 auto; */
+  justify-content: space-between;
+}
+
+#map-wrapper {
+  display: none;
+}
+
+@media only screen and (min-width: 800px) {
+  .main-container {
+    min-width: 550px;
+    padding: 20px;
+    max-width: 2800px;
+  }
+
+  #map-wrapper {
+    display: flex;
+    width: 49%;
+    height: 85vh;
+  }
 }
 
 .loader {
