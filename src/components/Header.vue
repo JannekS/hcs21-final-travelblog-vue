@@ -6,7 +6,7 @@
           <img src="/icons/compass.svg" alt="LOGO" />
         </div>
         <div id="blog-title">
-          <h1 class="text-4xl">My Travel Blog</h1>
+          <h1 class="text-4xl">The Travel Bug</h1>
         </div>
       </div>
       <nav>

@@ -1,12 +1,44 @@
 <template>
-  <div id="new-post">
-    <h1>Comming soon:</h1>
-    <p>Possibility to create new blog posts...</p>
+  <div class="new-post-container">
+    <BackHome />
+    <CommingSoon :message="message" />
   </div>
 </template>
 
 <script>
-export default {};
+import BackHome from "@/components/BackHome.vue";
+import CommingSoon from "@/components/CommingSoon.vue";
+export default {
+  components: {
+    CommingSoon,
+    BackHome,
+  },
+  data() {
+    return {
+      message:
+        "If you are logged in as a user, you will be able to create your own blog post on this page :-)",
+    };
+  },
+};
 </script>
 
-<style></style>
+<style scoped>
+.new-post-container {
+  margin: 20px;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+@media only screen and (min-width: 800px) {
+  .new-post-container {
+    max-width: 2800px;
+  }
+  @media only screen and (min-width: 2800px) {
+    .new-post-container {
+      margin: auto;
+    }
+  }
+}
+</style>

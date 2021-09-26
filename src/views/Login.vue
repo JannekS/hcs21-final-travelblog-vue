@@ -1,15 +1,44 @@
 <template>
-  <div>
-    <h1>Comming soon:</h1>
-    <p>
-      If you have an account, you will be able to create your own posts an blog
-      about your travel experiences...
-    </p>
+  <div class="login-container">
+    <BackHome />
+    <CommingSoon :message="message" />
   </div>
 </template>
 
 <script>
-export default {};
+import BackHome from "@/components/BackHome.vue";
+import CommingSoon from "@/components/CommingSoon.vue";
+export default {
+  components: {
+    CommingSoon,
+    BackHome,
+  },
+  data() {
+    return {
+      message:
+        "If you have an account, you will be able to create your own posts an blog about your travel experiences...",
+    };
+  },
+};
 </script>
 
-<style></style>
+<style scoped>
+.login-container {
+  margin: 20px;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+@media only screen and (min-width: 800px) {
+  .login-container {
+    max-width: 2800px;
+  }
+  @media only screen and (min-width: 2800px) {
+    .login-container {
+      margin: auto;
+    }
+  }
+}
+</style>

@@ -1,10 +1,6 @@
 <template>
   <div>
-    <div class="go-back">
-      <router-link to="/"
-        ><img src="/icons/arrow-left.svg" /> <span>Back to overview</span>
-      </router-link>
-    </div>
+    <BackHome />
     <div v-if="pageLoaded">
       <div v-if="status === 'OK'">
         <PostDetail :blogPost="blogPost" :geo="geo" />
@@ -14,7 +10,7 @@
       </div>
     </div>
     <div v-else>
-      <div class="loader"></div>
+      <Loading />
     </div>
   </div>
 </template>
@@ -22,10 +18,15 @@
 <script>
 import PostDetail from "@/components/PostDetail.vue";
 import FourOFour from "@/components/FourOFour.vue";
+import Loading from "@/components/Loading.vue";
+import BackHome from "@/components/BackHome.vue";
+
 export default {
   components: {
     PostDetail,
     FourOFour,
+    Loading,
+    BackHome,
   },
   data: function () {
     return {
@@ -57,37 +58,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.go-back {
-  padding: 5px 10px;
-  border-radius: 5px;
-  background-color: #e6d5b8;
-  margin: 10px;
-  float: left;
-}
-
-.go-back img,
-span {
-  vertical-align: middle;
-  height: 1.1rem;
-}
-
-.loader {
-  border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #3498db; /* Blue */
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  animation: spin 2s linear infinite;
-  margin: 30vh auto;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-</style>
+<style scoped></style>
