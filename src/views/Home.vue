@@ -108,6 +108,8 @@ body::after {
     display: flex;
     width: 49%;
     height: 85vh;
+    border-radius: 10px;
+    overflow: hidden;
   }
 }
 
