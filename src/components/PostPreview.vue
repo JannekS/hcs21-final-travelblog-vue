@@ -11,19 +11,25 @@
           {{ blogPost.title }}
         </h2></router-link
       >
-      <p>
-        <img src="/icons/map-pin.svg" alt="Location: " />
-        {{ blogPost.city }} | {{ blogPost.country }}
-      </p>
-      <p>
-        <img src="/icons/calendar.svg" alt="Date: " />
-        {{ blogPost.trip_duration }}
-      </p>
-      <div class="author-info">
-        <div class="author-img">
-          <img :src="blogPost.author_image" alt="author-img" />
+      <div class="meta-data">
+        <div class="date-location">
+          <div>
+            <img src="/icons/map-pin.svg" alt="Location: " />
+            <p>{{ blogPost.city }} | {{ blogPost.country }}</p>
+          </div>
+          <div>
+            <img src="/icons/calendar.svg" alt="Date: " />
+            <p>
+              {{ blogPost.trip_duration }}
+            </p>
+          </div>
         </div>
-        <p>{{ blogPost.author_name }}</p>
+        <div class="author-info">
+          <div class="author-img">
+            <img :src="blogPost.author_image" alt="author-img" />
+          </div>
+          <p>{{ blogPost.author_name }}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -44,13 +50,48 @@ export default {
 
 <style scoped>
 .post-prev {
-  height: 500px;
-  width: 400px;
+  height: 480px;
+  width: 320px;
   padding: 10px;
   border-radius: 10px;
   background-color: white;
-  /* border: solid 1px black; */
+  margin: auto;
+  flex-basis: auto;
   box-shadow: 10px 5px 5px rgb(98, 98, 98);
+}
+
+.prev-content {
+  margin-top: 25px;
+}
+
+@media only screen and (min-width: 600px) {
+  .post-prev {
+    width: 400px;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .post-prev {
+    width: 350px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .post-prev {
+    width: 400px;
+  }
+}
+
+@media only screen and (min-width: 1650px) {
+  .post-prev {
+    width: 350px;
+  }
+}
+
+@media only screen and (min-width: 1900px) {
+  .post-prev {
+    width: 400px;
+  }
 }
 
 .post-img {
@@ -73,7 +114,38 @@ export default {
   cursor: pointer;
 }
 
+.meta-data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.date-location {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+}
+
+.date-location div {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0;
+}
+
+.date-location img {
+  height: 25px;
+  vertical-align: middle;
+}
+
+.date-location p {
+  vertical-align: middle;
+  margin: 0 10px;
+  padding: 0;
+}
+
 .author-info {
+  /* width: 40%; */
   display: flex;
   flex-direction: row;
   gap: 10px;

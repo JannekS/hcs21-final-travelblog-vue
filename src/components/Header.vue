@@ -45,6 +45,7 @@ header {
   top: 0;
   margin: 0; */
   width: 100%;
+  min-width: 300px;
   background-color: #e6d5b8;
   /*   z-index: 10000; */
 }
@@ -77,6 +78,13 @@ header {
   font-family: "Lobster", cursive;
   margin: 0;
   color: #e45826;
+  display: none;
+}
+
+@media only screen and (min-width: 600px) {
+  #blog-title > h1 {
+    display: flex;
+  }
 }
 
 nav {
@@ -101,8 +109,11 @@ nav {
 .nav-item img {
   height: 20px;
   vertical-align: middle;
-  color: #4a3933;
-  /* margin-right: 5px; */
+  stroke: #4a3933;
+}
+
+.nav-item img:hover {
+  height: 25px;
 }
 
 .nav-item span {
@@ -113,6 +124,9 @@ nav {
   .nav-item span {
     vertical-align: middle;
     display: inline;
+  }
+  .nav-item img:hover {
+    height: 20px;
   }
 }
 

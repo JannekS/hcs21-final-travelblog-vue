@@ -92,16 +92,21 @@ export default {
 
 <style scoped>
 #map-wrapper {
-  display: none;
+  /* display: none; */
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
 }
 
-@media only screen and (min-width: 800px) {
+/* @media only screen and (min-width: 768px) {
   #map-wrapper {
     width: 100%;
     height: 100%;
     border-radius: 10px;
     overflow: hidden;
     display: flex;
-  }
-}
+  } 
+} */
 </style>

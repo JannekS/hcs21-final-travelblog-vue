@@ -4,24 +4,23 @@
       <div class="blog-post">
         <h1>{{ blogPost.title }}</h1>
         <div class="meta-data">
-          <div class="travel-data">
-            <p>
+          <div class="date-location">
+            <div>
               <img src="/icons/map-pin.svg" alt="Location: " />
-              {{ blogPost.city }} | {{ blogPost.country }}
-            </p>
-            <p>
-              <img src="/icons/calendar.svg" alt="Date: " />
-              {{ blogPost.trip_duration }}
-            </p>
-          </div>
-          <div>
-            <p>Author:</p>
-            <div class="author-info">
-              <div class="author-img">
-                <img :src="blogPost.author_image" alt="author-img" />
-              </div>
-              <p>{{ blogPost.author_name }}</p>
+              <p>{{ blogPost.city }} | {{ blogPost.country }}</p>
             </div>
+            <div>
+              <img src="/icons/calendar.svg" alt="Date: " />
+              <p>
+                {{ blogPost.trip_duration }}
+              </p>
+            </div>
+          </div>
+          <div class="author-info">
+            <div class="author-img">
+              <img :src="blogPost.author_image" alt="author-img" />
+            </div>
+            <p>{{ blogPost.author_name }}</p>
           </div>
         </div>
 
@@ -101,8 +100,7 @@ export default {
   overflow-y: auto;
 }
 .detail-wrapper {
-  min-width: 400px;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 10px;
   padding: 20px;
   border-radius: 10px;
@@ -121,33 +119,35 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
+  font-size: 1.1rem;
+}
+
+.date-location {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+}
+
+.date-location div {
+  display: flex;
+  flex-direction: row;
   margin: 10px 0;
 }
-.blog-post {
+
+.date-location img {
+  height: 25px;
+  vertical-align: middle;
 }
 
-.post-img {
-  height: 250px;
-  width: 100%;
-  margin: 20px 0;
+.date-location p {
+  vertical-align: middle;
+  margin: 0 10px;
+  padding: 0;
 }
 
-@media only screen and (min-width: 600px) {
-  .post-img {
-    height: 400px;
-    width: 100%;
-    margin: 20px 0;
-  }
-}
-
-.post-img img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-}
 .author-info {
+  /* width: 40%; */
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -165,16 +165,45 @@ export default {
   border-radius: 50%;
 }
 
-.main-text {
-  white-space: pre-line;
-  font-size: 1.2rem;
+.post-img {
+  height: 250px;
+  width: 100%;
+  margin: 20px 0;
 }
 
 .map-wrapper {
   width: 100%;
-  height: 400px;
+  height: 200px;
   margin: 20px 0px;
   border-radius: 10px;
   overflow: hidden;
+}
+
+@media only screen and (min-width: 600px) {
+  .post-img {
+    height: 400px;
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .map-wrapper {
+    width: 100%;
+    height: 400px;
+    margin: 20px 0px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+}
+
+.post-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.main-text {
+  white-space: pre-line;
+  font-size: 1.2rem;
 }
 </style>

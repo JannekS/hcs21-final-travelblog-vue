@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="go-back">
-      <router-link to="/">Back to overview</router-link>
+      <router-link to="/"
+        ><img src="/icons/arrow-left.svg" /> <span>Back to overview</span>
+      </router-link>
     </div>
     <div v-if="pageLoaded">
       <div v-if="status === 'OK'">
@@ -62,6 +64,12 @@ export default {
   background-color: #e6d5b8;
   margin: 10px;
   float: left;
+}
+
+.go-back img,
+span {
+  vertical-align: middle;
+  height: 1.1rem;
 }
 
 .loader {

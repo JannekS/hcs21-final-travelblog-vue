@@ -61,11 +61,12 @@ a:visited {
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
+a:hover span {
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
-a:active {
+a:hover h2 {
   text-decoration: underline;
 }
 
@@ -83,13 +84,11 @@ body::after {
 }
 
 .main-container {
-  min-width: 450px;
   margin-top: 10px;
   height: 85vh;
-  padding: 20px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 #map-wrapper {
@@ -101,6 +100,8 @@ body::after {
     min-width: 550px;
     padding: 20px;
     max-width: 2800px;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   #map-wrapper {

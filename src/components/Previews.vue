@@ -22,23 +22,21 @@ export default {
 <style scoped>
 #prev-wrapper {
   width: 100%;
-  min-width: auto;
+  min-width: 300px;
   height: 85vh;
   margin: 0;
   padding-bottom: 20px;
   overflow-y: auto;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  flex-direction: column;
+  flex-wrap: nowrap;
   gap: 20px;
 }
 
 @media only screen and (min-width: 800px) {
   #prev-wrapper {
     width: 49%;
-    min-width: 450px;
-    /* margin: auto; */
+    margin: auto;
     padding-bottom: 20px;
     overflow-y: auto;
     display: flex;
