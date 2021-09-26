@@ -44,6 +44,42 @@ export default {
 </script>
 
 <style lang="scss">
+body {
+  background-image: url(https://images.pexels.com/photos/4172291/pexels-photo-4172291.jpeg?cs=srgb&dl=pexels-wallace-chuck-4172291.jpg&fm=jpg);
+  background-repeat: repeat-y;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: "Lato", sans-serif;
+  color: #4a3933;
+}
+
+a:link,
+a:visited {
+  color: #4a3933;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  text-decoration: underline;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  display: block;
+  background-color: antiquewhite;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  z-index: -10;
+}
+
 .main-container {
   display: flex;
   flex-direction: row;
