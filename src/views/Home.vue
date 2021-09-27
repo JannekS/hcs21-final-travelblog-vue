@@ -36,9 +36,7 @@ export default {
       const response = await fetch(url);
       const result = await response.json();
 
-      this.blogPostData = result.sort(function (post1, post2) {
-        return post1.date_from < post2.date_from;
-      });
+      this.blogPostData = result;
     } catch (error) {
       console.log("ERROR:");
       console.log(error);
