@@ -11,12 +11,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Lobster&family=Yomogi&display=swap" rel="stylesheet">
     <title>The Travel Bug</title>
 
-    <script src="https://kit.fontawesome.com/6da028fe8c.js" crossorigin="anonymous"></script>
+    <style>
+      #no-js {
+        margin: auto;
+        margin-top: 50px;
+        font-size: 2rem;
+        color: white;
+      }
+    </style>
   </head>
 
   <body>
     <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <div id="no-js">
+        <strong>We're sorry but this website doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      </div>
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
