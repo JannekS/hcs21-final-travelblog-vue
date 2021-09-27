@@ -41,30 +41,20 @@ export default {};
 
 <style scoped>
 header {
-  /*   position: fixed;
-  top: 0;
-  margin: 0; */
   width: 100%;
   min-width: 300px;
   background-color: #e6d5b8;
-  /*   z-index: 10000; */
 }
 
 #header-wrapper {
-  /* width: 90%; */
-  /*   min-width: 600px; */
   max-height: 80px;
   max-width: 2800px;
-  margin: 0 auto;
-  /* margin-right: auto; */
+  margin: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  /* padding-left: 20px;
-  padding-right: 20px; */
   padding: 10px 20px;
-  /* z-index: 10; */
 }
 
 #logo-title {

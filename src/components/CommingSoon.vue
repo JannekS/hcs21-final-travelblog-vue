@@ -16,12 +16,11 @@ export default {
 <style scoped>
 .container {
   padding: 30px;
-  margin: auto;
-  margin-top: 10px;
-  min-width: 300px;
-  min-height: 480px;
+  margin: 10px 20px;
+  min-height: 300px;
   background-color: white;
   border-radius: 10px;
+  box-shadow: 10px 5px 5px rgb(98, 98, 98);
   text-align: center;
 }
 

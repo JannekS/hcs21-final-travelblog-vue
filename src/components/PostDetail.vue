@@ -101,9 +101,10 @@ export default {
 }
 .detail-wrapper {
   max-width: 1100px;
-  margin: 0 10px;
+  margin: 0 10px 10px 20px;
   padding: 20px;
   border-radius: 10px;
+  box-shadow: 10px 5px 5px rgb(98, 98, 98);
   background-color: white;
 }
 
@@ -111,7 +112,8 @@ export default {
   .detail-wrapper {
     padding-left: 40px;
     padding-right: 40px;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 

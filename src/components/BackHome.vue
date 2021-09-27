@@ -15,7 +15,7 @@ export default {};
   padding: 5px 10px;
   border-radius: 5px;
   background-color: #e6d5b8;
-  margin: 10px;
+  margin: 10px 20px;
   float: left;
   width: 160px;
 }

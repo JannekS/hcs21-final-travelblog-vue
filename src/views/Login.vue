@@ -24,8 +24,6 @@ export default {
 
 <style scoped>
 .login-container {
-  margin: 20px;
-  height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
