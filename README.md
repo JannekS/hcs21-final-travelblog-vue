@@ -20,7 +20,7 @@ I tried to make the website as responsive as possible. To improve the user exper
 
 ### Hosting
 
-The frontend app is hosted on: https://hopeful-hoover-d95227.netlify.app/
+The frontend app is hosted on: https://the-travelbug.netlify.app/
 
 The backend server is hosted on: https://hcs21-travelblog-node-server.herokuapp.com (go to /posts to get the preview data for all posts)
 
